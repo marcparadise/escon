@@ -73,10 +73,10 @@ handle_call(_Request, _From, State) ->
     {noreply, State}.
 
 handle_cast({unwatch, Pid, all}, State) ->
-    configurator_submanager:unwatch_all(Pid),
+    escon_submanager:unwatch_all(Pid),
     {noreply, State};
 handle_cast({unwatch, Pid, What}, State) ->
-    configurator_submanager:unwatch(Pid, What),
+    escon_submanager:unwatch(Pid, What),
     {noreply, State};
 handle_cast(_Request, State) ->
     {noreply, State}.
@@ -91,13 +91,13 @@ code_change(_OldVsn, State, _Extra) ->
     {ok, State}.
 
 get_value(What, no_notify, _Pid) ->
-    configurator_store:get(What);
+    escon_store:get(What);
 get_value(What, notify, Pid) ->
     start_watching(Pid, What),
-    configurator_store:get(What).
+    escon_store:get(What).
 
 
 
 start_watching(Pid, What) ->
-    configurator_submanager:watch(Pid, What).
+    escon_submanager:watch(Pid, What).
 

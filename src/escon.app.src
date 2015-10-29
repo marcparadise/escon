@@ -1,7 +1,16 @@
 {application, 'escon',
  [{description, "Configuration proxy that notifies when things change."},
-  {vsn, '1.0.0'},
+  {vsn, "1.0.0"},
   {registered, []},
-  {applications, [kernel, stdlib ]},
+  {mod, {'escon_app', []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
   {env,[]},
+  {modules, []},
+
+  {contributors, []},
+  {licenses, []},
+  {links, []}
  ]}.

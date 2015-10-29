@@ -29,8 +29,7 @@
 %%
 %% API
 %%
--export([start_link/0,
-         notify/2]).
+-export([start_link/0, notify/2]).
 
 %%
 %% gen_server
