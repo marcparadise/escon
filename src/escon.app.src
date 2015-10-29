@@ -1,0 +1,7 @@
+{application, 'escon',
+ [{description, "Configuration proxy that notifies when things change."},
+  {vsn, '1.0.0'},
+  {registered, []},
+  {applications, [kernel, stdlib ]},
+  {env,[]},
+ ]}.
